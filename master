@@ -1,0 +1,24 @@
+/home/projects/courses/spring_20/ee382n-19/20s.382N/lib/time -v 
+/home/projects/courses/spring_20/ee382n-19/20s.382N/lib/lib1
+/home/projects/courses/spring_20/ee382n-19/20s.382N/lib/lib2
+/home/projects/courses/spring_20/ee382n-19/20s.382N/lib/lib3
+/home/projects/courses/spring_20/ee382n-19/20s.382N/lib/lib4
+/home/projects/courses/spring_20/ee382n-19/20s.382N/lib/lib5
+/home/projects/courses/spring_20/ee382n-19/20s.382N/lib/lib6
+
+mux.v
+full_adder.v
+adder.v
+priority_encoder.v
+xor.v
+ALU.v
+or.v
+and.v
+bsf32.v
+regfile.v
+dummy_mem.v
+AG.v
+MR.v
+dff.v
+processor.v
+MW.v

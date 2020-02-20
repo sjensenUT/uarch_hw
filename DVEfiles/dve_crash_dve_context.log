@@ -1,0 +1,4 @@
+=======================DVE Context and Call Stack=========================
+Command line: /usr/local/packages/synopsys_2015/vcs-mx//gui/dve/linux64/bin/dve.exe -full64
+
+--- Stack trace follows:

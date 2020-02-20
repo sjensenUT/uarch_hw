@@ -1,0 +1,283 @@
+{
+    "Modules": {
+        "rom64b32w$": {},
+        "latch8$": {},
+        "...MASTER...": {},
+        "rom4b32w$": {},
+        "mux3$": {},
+        "timeunit": {},
+        "dff16b$": {},
+        "regfile$": {},
+        "dff8$": {},
+        "tristateH$": {},
+        "jkff16$": {},
+        "dff16$": {},
+        "dff32b$": {},
+        "tristate8H$": {},
+        "decoder2_4$": {},
+        "mux2_16": {},
+        "latch16$": {},
+        "jkff8$": {},
+        "buffer$": {},
+        "tristate8L$": {},
+        "syn_cntr8$": {},
+        "dff32": {},
+        "buffer8$": {},
+        "sram32x8$": {},
+        "dff$": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "bufferH64$": {},
+        "tristate_bus_driver16$": {},
+        "buffer16$": {},
+        "mag_comp4$": {},
+        "bufferH16$": {},
+        "dff16": {},
+        "tristate16H$": {},
+        "alu4$": {},
+        "tristate_bus_driver1$": {},
+        "bufferHInv256$": {},
+        "dffe32_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "adder32_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "bufferHInv1024$": {},
+        "bufferH256$": {},
+        "dffe8_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "bufferH1024$": {},
+        "bufferHInv16$": {},
+        "ioreg16$": {},
+        "bufferHInv64$": {},
+        "latch$": {},
+        "tristate16L$": {},
+        "tristateL$": {},
+        "tristate_bus_driver8$": {},
+        "reg64e$": {},
+        "mux4_16$": {},
+        "reg32e$": {},
+        "ioreg8$": {},
+        "regfile8x8$": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "ram8b8w$": {},
+        "mux4$": {},
+        "ram16b8w$": {},
+        "pencoder8_3v$": {},
+        "ram8b4w$": {},
+        "mux2_8$": {},
+        "rom32b32w$": {},
+        "mux2$": {},
+        "sram32x32$": {},
+        "mux2_16$": {},
+        "mux3_8$": {},
+        "sram32x16$": {},
+        "mux3_16$": {},
+        "mux4_8$": {},
+        "decoder3_8$": {},
+        "pencoder8_3$": {},
+        "or2$": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "mag_comp8$": {},
+        "sram128x8$": {},
+        "mux2_32_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "full_adder": {},
+        "pe4_2": {},
+        "nor8_1": {},
+        "dffe": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "dffe16_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "dffe2_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "TOP": {
+            "Compiled": "Yes",
+            "Compiled Times": 3
+        },
+        "and2$": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        }
+    },
+    "CompUnits": {
+        "zHU3C_d": {
+            "mod": "dffe2_0000",
+            "out": "zHU3C_d.o",
+            "checksum": 4294967295,
+            "bytes": 12397,
+            "mode": 4,
+            "archive": "archive.60/_1211_archive_1.a"
+        },
+        "amcQw_d": {
+            "mod": "...MASTER...",
+            "out": "objs/amcQw_d.o",
+            "checksum": 4294967295,
+            "bytes": 22130,
+            "mode": 4
+        },
+        "VIY5Q_d": {
+            "mod": "regfile8x8$",
+            "out": "VIY5Q_d.o",
+            "checksum": 4294967295,
+            "bytes": 25180,
+            "mode": 4,
+            "archive": "archive.60/_1211_archive_1.a"
+        },
+        "tQDZM_d": {
+            "mod": "mux2_32_0000",
+            "out": "tQDZM_d.o",
+            "checksum": 4294967295,
+            "bytes": 9682,
+            "mode": 4,
+            "archive": "archive.60/_1211_archive_1.a"
+        },
+        "T43aq_d": {
+            "mod": "dffe8_0000",
+            "out": "T43aq_d.o",
+            "checksum": 4294967295,
+            "bytes": 7046,
+            "mode": 4,
+            "archive": "archive.60/_1211_archive_1.a"
+        },
+        "HYgzw_d": {
+            "mod": "or2$",
+            "out": "HYgzw_d.o",
+            "checksum": 4294967295,
+            "bytes": 7985,
+            "mode": 4,
+            "archive": "archive.60/_1211_archive_1.a"
+        },
+        "nG6rj_d": {
+            "mod": "dffe16_0000",
+            "out": "nG6rj_d.o",
+            "checksum": 4294967295,
+            "bytes": 7954,
+            "mode": 4,
+            "archive": "archive.60/_1211_archive_1.a"
+        },
+        "uaMQU_d": {
+            "mod": "adder32_0000",
+            "out": "uaMQU_d.o",
+            "checksum": 4294967295,
+            "bytes": 9858,
+            "mode": 4,
+            "archive": "archive.60/_1211_archive_1.a"
+        },
+        "W3xM0_d": {
+            "mod": "dffe",
+            "out": "W3xM0_d.o",
+            "checksum": 4294967295,
+            "bytes": 9362,
+            "mode": 4,
+            "archive": "archive.60/_1211_archive_1.a"
+        },
+        "k1Ed2_d": {
+            "mod": "dffe32_0000",
+            "out": "k1Ed2_d.o",
+            "checksum": 4294967295,
+            "bytes": 9682,
+            "mode": 4,
+            "archive": "archive.60/_1211_archive_1.a"
+        },
+        "ThQKx_d": {
+            "mod": "TOP",
+            "out": "ThQKx_d.o",
+            "checksum": 4294967295,
+            "bytes": 178620,
+            "mode": 4,
+            "archive": "archive.60/_1211_archive_1.a"
+        },
+        "VFdkN_d": {
+            "mod": "and2$",
+            "out": "VFdkN_d.o",
+            "checksum": 4294967295,
+            "bytes": 7853,
+            "mode": 4,
+            "archive": "archive.60/_1211_archive_1.a"
+        },
+        "SD5jH_d": {
+            "mod": "dff$",
+            "out": "SD5jH_d.o",
+            "checksum": 4294967295,
+            "bytes": 13148,
+            "mode": 4,
+            "archive": "archive.60/_1211_archive_1.a"
+        }
+    },
+    "ObjArchives": [
+        {
+            "objects": [
+                [
+                    "VIY5Q_d.o",
+                    25180
+                ],
+                [
+                    "tQDZM_d.o",
+                    9682
+                ],
+                [
+                    "uaMQU_d.o",
+                    9858
+                ],
+                [
+                    "W3xM0_d.o",
+                    9362
+                ],
+                [
+                    "k1Ed2_d.o",
+                    9682
+                ],
+                [
+                    "nG6rj_d.o",
+                    7954
+                ],
+                [
+                    "T43aq_d.o",
+                    7046
+                ],
+                [
+                    "zHU3C_d.o",
+                    12397
+                ],
+                [
+                    "ThQKx_d.o",
+                    178620
+                ],
+                [
+                    "VFdkN_d.o",
+                    7853
+                ],
+                [
+                    "HYgzw_d.o",
+                    7985
+                ],
+                [
+                    "SD5jH_d.o",
+                    13148
+                ]
+            ],
+            "archive": "archive.60/_1211_archive_1.a",
+            "size": 298767
+        }
+    ],
+    "reusePaths": {}
+}
