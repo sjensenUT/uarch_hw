@@ -31,8 +31,8 @@
 -picarchive
 /usr/local/packages/synopsys_2015/vcs-mx/linux64/bin/vcs1
 48
-sysc_uni_pwd=/home/ecelrc/students/sjensen/spring_2020/microarchitecture/hw2
-XDG_SESSION_ID=3220
+sysc_uni_pwd=/home/ecelrc/students/sjensen/spring_2020/microarchitecture/hw
+XDG_SESSION_ID=3929
 XDG_RUNTIME_DIR=/run/user/27977
 XDG_DATA_DIRS=/home/ecelrc/students/sjensen//.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 VMR_MODE_FLAG=64
@@ -46,9 +46,9 @@ VCS_ARCH=linux64
 UNAME=/bin/uname
 TOOL_HOME=/usr/local/packages/synopsys_2015/vcs-mx/linux64
 TCLSH=/usr/bin/tclsh
-SSH_TTY=/dev/pts/48
-SSH_CONNECTION=172.29.200.41 38398 146.6.221.75 22
-SSH_CLIENT=172.29.200.41 38398 22
+SSH_TTY=/dev/pts/45
+SSH_CONNECTION=172.29.200.152 33012 146.6.221.75 22
+SSH_CLIENT=172.29.200.152 33012 22
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
 SNPSLMD_LICENSE_FILE_modshare=/usr/local/packages/synopsys_2015/key:1
 SNPSLMD_LICENSE_FILE=/usr/local/packages/synopsys_2015/key
@@ -80,21 +80,22 @@ HISTCONTROL=ignoredups
 CVS_RSH=ssh
 BASH_FUNC_module()=() {  eval `$TCLSH /home/projects/Modules/modulecmd.tcl bash $*`_}
 0
-26
+27
 1581976982 /home/projects/courses/spring_20/ee382n-19/20s.382N/lib/lib1
-1582184380 MW.v
-1582184174 processor.v
-1582182430 dff.v
-1582184306 MR.v
-1582150067 AG.v
+1582311682 testpe.v
+1582360637 reg_dep.v
+1582265700 MW.v
+1582262144 dff.v
+1582266153 MR.v
+1582266041 AG.v
 1582135986 dummy_mem.v
 1581800873 regfile.v
 1581896379 bsf32.v
 1582182864 and.v
 1582182894 or.v
-1582147742 ALU.v
+1582360714 ALU.v
 1582140664 xor.v
-1581320853 priority_encoder.v
+1582311676 priority_encoder.v
 1581839819 adder.v
 1581324615 full_adder.v
 1582136700 mux.v
@@ -105,11 +106,11 @@ BASH_FUNC_module()=() {  eval `$TCLSH /home/projects/Modules/modulecmd.tcl bash 
 1578802039 /home/projects/courses/spring_20/ee382n-19/20s.382N/lib/lib2
 1581976982 /home/projects/courses/spring_20/ee382n-19/20s.382N/lib/lib1
 1578802039 /home/projects/courses/spring_20/ee382n-19/20s.382N/lib/time
-1582184214 master
+1582360503 master
 1448424285 /usr/local/packages/synopsys_2015/vcs-mx/linux64/lib/vcsdp.tab
 4
 0 
 1448427877 /usr/local/packages/synopsys_2015/vcs-mx/linux64/lib/libvirsim.so
 1448427558 /usr/local/packages/synopsys_2015/vcs-mx/linux64/lib/liberrorinf.so
 1448427538 /usr/local/packages/synopsys_2015/vcs-mx/linux64/lib/libsnpsmalloc.so
-1582184386 simv.daidir
+1582360719 simv.daidir

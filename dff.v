@@ -93,6 +93,20 @@ module dffe2 (clk, d, q, qb, r, s, e);
 
 endmodule
 
+module dffe3 (clk, d, q, qb, r, s, e);
+    input wire[0:0] clk, r, s, e;
+    input wire[2:0] d;
+    output wire[2:0] q, qb;
+
+    generate
+        genvar i;
+        for(i = 0; i < 3; i = i + 1) begin : dffes
+            dffe dffe(clk, d[i], q[i], qb[i], r, s, e);
+        end
+    endgenerate
+
+endmodule
+
 module dffev32 (clk, d, q, qb, r, s, e);
     input wire[0:0] clk, r, s;
     input wire[31:0] d, e;

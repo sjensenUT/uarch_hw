@@ -43,3 +43,53 @@ module pe32_5 (out, v, in);
     mux2_4 mux1(out[3:0], out_low, out_high, v_high);
 
 endmodule
+
+module per4_2 (out, v, in);
+    input wire[3:0] in;
+    output wire[1:0] out;
+    output wire[0:0] v;
+
+    wire[0:0] in0b, in1b, in2b, in2b_or_in1;
+    
+    inv1$ inv1 (in0b, in[0]),
+          inv2 (in1b, in[1]),
+          inv3 (in2b, in[2]);
+    or2$ or1 (in2b_or_in1, in2b, in[1]);
+    and2$ and1 (out[0], in0b, in2b_or_in1),
+          and2 (out[1], in0b, in1b);
+    or4$ or2(v, in[0], in[1], in[2], in[3]);
+endmodule
+
+module per16_4 (out, v, in);
+    input wire[15:0] in;
+    output wire[3:0] out;
+    output wire[0:0] v;
+    
+    wire[3:0] vs;
+    wire[1:0] out3, out2, out1, out0;
+    per4_2 per1 (out3, vs[3], in[15:12]),
+        per2 (out2, vs[2], in[11:8]),
+        per3 (out1, vs[1], in[7:4]),
+        per4 (out0, vs[0], in[3:0]),
+        per5 (out[3:2], v, vs);
+    mux4_2 mux1 (out[1:0], out0, out1, out2, out3, out[3:2]);
+
+endmodule
+
+module per32_5 (out, v, in);
+    input wire[31:0] in;
+    output wire[4:0] out;
+    output wire[0:0] v;
+
+    wire[0:0] v_high, v_low;
+    wire[3:0] out_high, out_low;
+
+    per16_4 per_high (out_high, v_high, in[31:16]),
+        per_low (out_low, v_low, in[15:0]);
+    or2$ or1 (v, v_high, v_low);
+    inv1$ inv1(out[4], v_low);
+    mux2_4 mux1(out[3:0], out_high, out_low, v_low);
+
+endmodule
+
+

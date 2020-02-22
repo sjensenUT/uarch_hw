@@ -20,5 +20,6 @@ dummy_mem.v
 AG.v
 MR.v
 dff.v
-processor.v
 MW.v
+reg_dep.v
+testpe.v

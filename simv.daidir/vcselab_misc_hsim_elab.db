@@ -1,6 +1,6 @@
 psSimBaseName                      	simv
 psLogFileName                      	NULL
-pDaiDir                            	/home/ecelrc/students/sjensen/spring_2020/microarchitecture/hw2/simv.daidir
+pDaiDir                            	/home/ecelrc/students/sjensen/spring_2020/microarchitecture/hw/simv.daidir
 destPath                           	csrc/
 fSharedMaster                      	0
 hsMainFileCount                    	0

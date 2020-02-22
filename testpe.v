@@ -8,7 +8,7 @@ module TOP;
 
     initial
         begin
-            in = 32'h10000000;
+            in = 32'h00000000;
             #10
             in = 32'h20000000;
             #10
@@ -33,6 +33,6 @@ module TOP;
     //always @*
         //$strobe ("at time %0d, a = %b, b = %b, c = %b, d = %b, sel = %b", $time, a, b, c, d, sel);
     
-    pe32_5 pe(out, v, in);
+    per32_5 pe(out, v, in);
 
 endmodule

@@ -1,9 +1,9 @@
-module mw_logic (mwe, rfwe, ccwe, eipwe, cswe, drid, cc, af, cf, of, aluval, modrm, rmsel, we, ccw, eipw, csw, v);
-    input wire[31:0] aluval, ccw;
-    input wire[0:0] af, cf, of, we, rmsel, eipw, csw, v;
+module mw_logic (mwe, rfwe, flagwe, drid, flags, af, cf, of, aluval, modrm, rmsel, we, flagw, v);
+    input wire[31:0] aluval, flagw;
+    input wire[0:0] af, cf, of, we, rmsel, v;
     input wire[7:0] modrm;
-    output wire[31:0] cc, ccwe;
-    output wire[0:0] mwe, rfwe, eipwe, cswe;
+    output wire[31:0] flags, flagwe;
+    output wire[0:0] mwe, rfwe;
     output wire[2:0] drid;
     
     wire[0:0] mod_indirect, rfwe_temp;
@@ -19,16 +19,14 @@ module mw_logic (mwe, rfwe, ccwe, eipwe, cswe, drid, cc, af, cf, of, aluval, mod
            nand2(rfwe_temp, rmsel, mod_indirect); 
     and4$ and1(mwe, we, rmsel, mod_indirect, v);
     and3$ and2(rfwe, rfwe_temp, we, v);
-    and2$ and3(eipwe, eipw, v),
-          and4(cswe, csw, v);
-    and2_32 and5(ccwe, ccw, v_vector);
+    and2_32 and5(flagwe, flagw, v_vector);
 
     mux2_3 mux2(drid, modrm[5:3], modrm[2:0], rmsel);
-    assign cc[0] = cf;
-    xnor8_1 xnor1(cc[2], aluval[7:0]);
-    assign cc[4] = af;
-    nor32_1 nor1(cc[6], aluval);
-    assign cc[7] = aluval[31];
-    assign cc[11] = of;
+    assign flags[0] = cf;
+    xnor8_1 xnor1(flags[2], aluval[7:0]);
+    assign flags[4] = af;
+    nor32_1 nor1(flags[6], aluval);
+    assign flags[7] = aluval[31];
+    assign flags[11] = of;
 endmodule
 

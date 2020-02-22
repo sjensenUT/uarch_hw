@@ -9,7 +9,8 @@ module ALU (out, a, b, sel, cf, af, of);
 
     or2_32 or1(out1, a, b);
     adder32 adder1(out3, couts, a, b);
-    bsf32 bsf1(out2, v, a);
+    per32_5 per1(out2[4:0], v, a);
+    assign out2[31:5] = 27'h0;
     
     mux4_32 mux1(out, b, out1, out2, out3, sel);
     
