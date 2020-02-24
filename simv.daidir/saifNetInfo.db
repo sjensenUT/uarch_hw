@@ -1,4 +1,4 @@
-43
+46
 ALU
 carry_sel
 All
@@ -51,7 +51,13 @@ mr_logic
 dval_sel
 All
 mr_logic
+read_finishedb
+Scal
+mr_logic
 reb
+All
+mr_logic
+reb_or_rf
 All
 mr_logic
 rmselb
@@ -60,13 +66,16 @@ mr_logic
 sval_sel
 All
 mr_logic
-v_temp
+v_reb_or_rf
 All
 mw_logic
 mod_indirect
 All
 mw_logic
 rfwe_temp
+All
+mw_logic
+write_finishedb
 All
 nor16_1
 temp1

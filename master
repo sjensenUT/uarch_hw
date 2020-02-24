@@ -21,5 +21,6 @@ AG.v
 MR.v
 dff.v
 MW.v
-reg_dep.v
-testpe.v
+reg_dep_logic.v
+mem_dep_logic.v
+processor.v

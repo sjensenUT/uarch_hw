@@ -8,12 +8,13 @@
 /home/ecelrc/students/sjensen/spring_2020/microarchitecture/hw/dff.v
 /home/ecelrc/students/sjensen/spring_2020/microarchitecture/hw/dummy_mem.v
 /home/ecelrc/students/sjensen/spring_2020/microarchitecture/hw/full_adder.v
+/home/ecelrc/students/sjensen/spring_2020/microarchitecture/hw/mem_dep_logic.v
 /home/ecelrc/students/sjensen/spring_2020/microarchitecture/hw/mux.v
 /home/ecelrc/students/sjensen/spring_2020/microarchitecture/hw/or.v
 /home/ecelrc/students/sjensen/spring_2020/microarchitecture/hw/priority_encoder.v
-/home/ecelrc/students/sjensen/spring_2020/microarchitecture/hw/reg_dep.v
+/home/ecelrc/students/sjensen/spring_2020/microarchitecture/hw/processor.v
+/home/ecelrc/students/sjensen/spring_2020/microarchitecture/hw/reg_dep_logic.v
 /home/ecelrc/students/sjensen/spring_2020/microarchitecture/hw/regfile.v
-/home/ecelrc/students/sjensen/spring_2020/microarchitecture/hw/testpe.v
 /home/ecelrc/students/sjensen/spring_2020/microarchitecture/hw/xor.v
 /home/projects/courses/spring_20/ee382n-19/20s.382N/lib/lib1
 /home/projects/courses/spring_20/ee382n-19/20s.382N/lib/lib2

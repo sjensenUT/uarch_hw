@@ -1,0 +1,270 @@
+{
+    "Modules": {
+        "...MASTER...": {},
+        "alu4$": {},
+        "regfile$": {},
+        "mux3_8$": {},
+        "bufferHInv1024$": {},
+        "sram32x8$": {},
+        "dffe2_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "dff8$": {},
+        "timeunit": {},
+        "dff16$": {},
+        "tristate16H$": {},
+        "tristate8H$": {},
+        "jkff8$": {},
+        "buffer$": {},
+        "ram8b8w$": {},
+        "dff32b$": {},
+        "bufferH1024$": {},
+        "mux3$": {},
+        "mag_comp4$": {},
+        "jkff16$": {},
+        "bufferH64$": {},
+        "bufferH256$": {},
+        "tristate16L$": {},
+        "mux4_8$": {},
+        "reg64e$": {},
+        "dff16b$": {},
+        "buffer8$": {},
+        "dffe16_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "syn_cntr8$": {},
+        "sram32x32$": {},
+        "dffe": {},
+        "adder32_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "bufferHInv256$": {},
+        "dffe32_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "buffer16$": {},
+        "latch16$": {},
+        "bufferH16$": {},
+        "bufferHInv16$": {},
+        "bufferHInv64$": {},
+        "latch$": {},
+        "rom4b32w$": {},
+        "and2$": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "latch8$": {},
+        "tristateL$": {},
+        "tristate8L$": {},
+        "mux2_8$": {},
+        "tristateH$": {},
+        "sram32x16$": {},
+        "pencoder8_3$": {},
+        "tristate_bus_driver1$": {},
+        "ioreg16$": {},
+        "ram16b8w$": {},
+        "pencoder8_3v$": {},
+        "tristate_bus_driver8$": {},
+        "tristate_bus_driver16$": {},
+        "reg32e$": {},
+        "ioreg8$": {},
+        "regfile8x8$": {},
+        "ram8b4w$": {},
+        "sram128x8$": {},
+        "rom32b32w$": {},
+        "rom64b32w$": {},
+        "mux2$": {},
+        "mux4$": {},
+        "mux2_16$": {},
+        "pe4_2": {},
+        "mux3_16$": {},
+        "bsf32": {},
+        "mux4_16$": {},
+        "decoder2_4$": {},
+        "decoder3_8$": {},
+        "mag_comp8$": {},
+        "mux2_32_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "full_adder": {},
+        "per4_2": {},
+        "nor8_1": {},
+        "xor2$": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "dff16": {},
+        "dff32": {},
+        "dffe8_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "TOP": {
+            "Compiled": "Yes",
+            "Compiled Times": 7
+        },
+        "or2$": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "dff$": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        }
+    },
+    "CompUnits": {
+        "amcQw_d": {
+            "checksum": 4294967295,
+            "mod": "...MASTER...",
+            "out": "objs/amcQw_d.o",
+            "bytes": 22283,
+            "mode": 4
+        },
+        "ThQKx_d": {
+            "archive": "archive.85/_25405_archive_1.a",
+            "checksum": 4294967295,
+            "mod": "TOP",
+            "out": "ThQKx_d.o",
+            "bytes": 210990,
+            "mode": 4
+        },
+        "T43aq_d": {
+            "archive": "archive.85/_25405_archive_1.a",
+            "checksum": 4294967295,
+            "mod": "dffe8_0000",
+            "out": "T43aq_d.o",
+            "bytes": 7046,
+            "mode": 4
+        },
+        "tQDZM_d": {
+            "archive": "archive.85/_25405_archive_1.a",
+            "checksum": 4294967295,
+            "mod": "mux2_32_0000",
+            "out": "tQDZM_d.o",
+            "bytes": 9682,
+            "mode": 4
+        },
+        "HYgzw_d": {
+            "archive": "archive.85/_25405_archive_1.a",
+            "checksum": 4294967295,
+            "mod": "or2$",
+            "out": "HYgzw_d.o",
+            "bytes": 7985,
+            "mode": 4
+        },
+        "uaMQU_d": {
+            "archive": "archive.85/_25405_archive_1.a",
+            "checksum": 4294967295,
+            "mod": "adder32_0000",
+            "out": "uaMQU_d.o",
+            "bytes": 9858,
+            "mode": 4
+        },
+        "VFdkN_d": {
+            "archive": "archive.85/_25405_archive_1.a",
+            "checksum": 4294967295,
+            "mod": "and2$",
+            "out": "VFdkN_d.o",
+            "bytes": 7861,
+            "mode": 4
+        },
+        "k1Ed2_d": {
+            "archive": "archive.85/_25405_archive_1.a",
+            "checksum": 4294967295,
+            "mod": "dffe32_0000",
+            "out": "k1Ed2_d.o",
+            "bytes": 9682,
+            "mode": 4
+        },
+        "nG6rj_d": {
+            "archive": "archive.85/_25405_archive_1.a",
+            "checksum": 4294967295,
+            "mod": "dffe16_0000",
+            "out": "nG6rj_d.o",
+            "bytes": 7954,
+            "mode": 4
+        },
+        "zHU3C_d": {
+            "archive": "archive.85/_25405_archive_1.a",
+            "checksum": 4294967295,
+            "mod": "dffe2_0000",
+            "out": "zHU3C_d.o",
+            "bytes": 12397,
+            "mode": 4
+        },
+        "FtB0q_d": {
+            "archive": "archive.85/_25405_archive_1.a",
+            "checksum": 4294967295,
+            "mod": "xor2$",
+            "out": "FtB0q_d.o",
+            "bytes": 7922,
+            "mode": 4
+        },
+        "SD5jH_d": {
+            "archive": "archive.85/_25405_archive_1.a",
+            "checksum": 4294967295,
+            "mod": "dff$",
+            "out": "SD5jH_d.o",
+            "bytes": 13148,
+            "mode": 4
+        }
+    },
+    "reusePaths": {},
+    "ObjArchives": [
+        {
+            "archive": "archive.85/_25405_archive_1.a",
+            "objects": [
+                [
+                    "tQDZM_d.o",
+                    9682
+                ],
+                [
+                    "uaMQU_d.o",
+                    9858
+                ],
+                [
+                    "k1Ed2_d.o",
+                    9682
+                ],
+                [
+                    "nG6rj_d.o",
+                    7954
+                ],
+                [
+                    "T43aq_d.o",
+                    7046
+                ],
+                [
+                    "zHU3C_d.o",
+                    12397
+                ],
+                [
+                    "ThQKx_d.o",
+                    210990
+                ],
+                [
+                    "VFdkN_d.o",
+                    7861
+                ],
+                [
+                    "HYgzw_d.o",
+                    7985
+                ],
+                [
+                    "FtB0q_d.o",
+                    7922
+                ],
+                [
+                    "SD5jH_d.o",
+                    13148
+                ]
+            ],
+            "size": 304525
+        }
+    ]
+}
