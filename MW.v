@@ -14,7 +14,7 @@ module mw_logic (v_mem_we, v_rf_ld, v_flag_ld, drid, flags, mw_stall, af, cf, of
             assign v_vector[i] = v;
         end
     endgenerate    
- 
+    inv1$ inv1(write_finishedb, write_finished); 
     nand2$ nand1(mod_indirect, modrm[7], modrm[6]),
            nand2(rfwe_temp, rmsel, mod_indirect); 
     and4$ and1(v_mem_we, we, rmsel, mod_indirect, v);

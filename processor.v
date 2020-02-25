@@ -158,7 +158,7 @@ module TOP;
             s = 1'b1;
             #0.1
             r = 1'b1;
-            de_v = 1'b1;
+            de_v = 1'b0;
             /*ptr = 32'h00000000;
             dval = 32'h00000002;
             sval = 32'h0000ABCD;
@@ -176,6 +176,8 @@ module TOP;
             v = 1'b1;
             @(posedge clk);
             //ld_ag = 1'b0;*/
+            @(posedge clk);
+            de_v = 1'b1;
         end
 
     initial #1000 $finish;
