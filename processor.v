@@ -12,7 +12,7 @@ module TOP;
     wire[0:0] reg_dep_stall, mem_dep_stall, mr_stall, mw_stall, ld_de, de_vin, f_ld_eip, de_v, ag_v, mr_v, ex_v, mw_v;
     wire[2:0] de_jmp, ag_jmp, mr_jmp;
     wire[127:0] f_instr;
-    wire[31:0] eflags, eipi, f_new_eip;
+    wire[31:0] eflags, eip, f_new_eip;
     wire[15:0] cs;
 
     dummy_fetch df(.de_vin(de_vin), .ld_de(ld_de), .f_instr(f_instr), .f_new_eip(f_new_eip), .f_ld_eip(f_ld_eip), .eip(eip), .v_de_jmp(de_jmp[2] & de_v), .v_ag_jmp(ag_jmp[2] & ag_v),
@@ -26,6 +26,7 @@ module TOP;
     wire[7:0] de_modrm;
     wire[15:0] de_sreg, de_ptr;
     wire[31:0] de_dval, de_sval, de_disp, de_flags, de_flag_ld;
+    wire[127:0] de_instr;
     dffe dev_dff(.clk(clk), .d(de_vin), .q(de_v), .qb(), .r(r), .s(s), .e(ld_de));
     dffe128 deinstr_dff(.clk(clk), .d(f_instr), .q(de_instr), .qb(), .r(r), .s(s), .e(ld_de));
     dummy_decode de(.de_re(de_re), .de_we(de_we), .ag_vin(ag_vin), .de_rmsel(de_rmsel), .de_alusel(de_alusel), .de_dval(de_dval),

@@ -53,8 +53,8 @@ endmodule
 
 module dffe128 (clk, d, q, qb, r, s, e);
     input wire[0:0] clk, r, s, e;
-    input wire[128:0] d;
-    output wire[128:0] q, qb;
+    input wire[127:0] d;
+    output wire[127:0] q, qb;
 
     generate
         genvar i;

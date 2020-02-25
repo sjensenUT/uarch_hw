@@ -32,7 +32,7 @@
 /usr/local/packages/synopsys_2015/vcs-mx/linux64/bin/vcs1
 48
 sysc_uni_pwd=/home/ecelrc/students/sjensen/spring_2020/microarchitecture/hw
-XDG_SESSION_ID=5098
+XDG_SESSION_ID=5150
 XDG_RUNTIME_DIR=/run/user/27977
 XDG_DATA_DIRS=/home/ecelrc/students/sjensen//.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 VMR_MODE_FLAG=64
@@ -46,9 +46,9 @@ VCS_ARCH=linux64
 UNAME=/bin/uname
 TOOL_HOME=/usr/local/packages/synopsys_2015/vcs-mx/linux64
 TCLSH=/usr/bin/tclsh
-SSH_TTY=/dev/pts/48
-SSH_CONNECTION=10.145.240.40 57710 146.6.221.75 22
-SSH_CLIENT=10.145.240.40 57710 22
+SSH_TTY=/dev/pts/77
+SSH_CONNECTION=10.145.240.40 58018 146.6.221.75 22
+SSH_CLIENT=10.145.240.40 58018 22
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
 SNPSLMD_LICENSE_FILE_modshare=/usr/local/packages/synopsys_2015/key:1
 SNPSLMD_LICENSE_FILE=/usr/local/packages/synopsys_2015/key
@@ -82,13 +82,13 @@ BASH_FUNC_module()=() {  eval `$TCLSH /home/projects/Modules/modulecmd.tcl bash 
 0
 30
 1581976982 /home/projects/courses/spring_20/ee382n-19/20s.382N/lib/lib1
-1582659960 processor.v
+1582663716 processor.v
 1582411001 mem_dep_logic.v
 1582659461 reg_dep_logic.v
 1582659740 FETCH.v
 1582658874 DE.v
 1582582304 MW.v
-1582603083 dff.v
+1582663591 dff.v
 1582657379 MR.v
 1582266041 AG.v
 1582581879 dummy_mem.v
@@ -116,4 +116,4 @@ BASH_FUNC_module()=() {  eval `$TCLSH /home/projects/Modules/modulecmd.tcl bash 
 1448427877 /usr/local/packages/synopsys_2015/vcs-mx/linux64/lib/libvirsim.so
 1448427558 /usr/local/packages/synopsys_2015/vcs-mx/linux64/lib/liberrorinf.so
 1448427538 /usr/local/packages/synopsys_2015/vcs-mx/linux64/lib/libsnpsmalloc.so
-1582659965 simv.daidir
+1582663776 simv.daidir
