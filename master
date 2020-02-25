@@ -22,6 +22,7 @@ MR.v
 dff.v
 MW.v
 DE.v
+FETCH.v
 reg_dep_logic.v
 mem_dep_logic.v
 processor.v

@@ -6,32 +6,39 @@ module TOP;
     //reg[2:0] jmp;
     //reg[1:0] alusel;
     //reg[7:0] modrm;
-    reg[0:0] clk, s, r, de_v;
+    reg[0:0] clk, s, r;
 
     //FETCH
-    wire[0:0] reg_dep_stall, mem_dep_stall, mr_stall, mw_stall, v_de_jmp_stall, v_ag_jmp_stall, v_mr_jmp_stall, ld_de; 
+    wire[0:0] reg_dep_stall, mem_dep_stall, mr_stall, mw_stall, ld_de, de_vin, f_ld_eip, de_v, ag_v, mr_v, ex_v, mw_v;
+    wire[2:0] de_jmp, ag_jmp, mr_jmp;
+    wire[127:0] f_instr;
+    wire[31:0] eflags, eipi, f_new_eip;
+    wire[15:0] cs;
+
+    dummy_fetch df(.de_vin(de_vin), .ld_de(ld_de), .f_instr(f_instr), .f_new_eip(f_new_eip), .f_ld_eip(f_ld_eip), .eip(eip), .v_de_jmp(de_jmp[2] & de_v), .v_ag_jmp(ag_jmp[2] & ag_v),
+                   .v_mr_jmp(mr_jmp[2] & mr_v), .reg_dep(reg_dep_stall), .mem_dep(mem_dep_stall), .mr_stall(mr_stall), .mw_stall(mw_stall));
+
+    
      
     //DECODE 
     wire[0:0] de_re, de_we, ag_vin, de_rmsel, ro_needed, rm_needed, ld_ag;
     wire[1:0] de_alusel;
-    wire[2:0] de_jmp;
     wire[7:0] de_modrm;
     wire[15:0] de_sreg, de_ptr;
     wire[31:0] de_dval, de_sval, de_disp, de_flags, de_flag_ld;
- 
+    dffe dev_dff(.clk(clk), .d(de_vin), .q(de_v), .qb(), .r(r), .s(s), .e(ld_de));
+    dffe128 deinstr_dff(.clk(clk), .d(f_instr), .q(de_instr), .qb(), .r(r), .s(s), .e(ld_de));
     dummy_decode de(.de_re(de_re), .de_we(de_we), .ag_vin(ag_vin), .de_rmsel(de_rmsel), .de_alusel(de_alusel), .de_dval(de_dval),
                 .de_sval(de_sval), .de_disp(de_disp), .de_flags(de_flags), .de_flag_ld(de_flag_ld), .de_sreg(de_sreg),
                 .de_ptr(de_ptr), .de_modrm(de_modrm), .de_jmp(de_jmp), .ro_needed(ro_needed), .rm_needed(rm_needed), 
                 .ld_ag(ld_ag), .mem_dep(mem_dep_stall), .reg_dep(reg_dep_stall), .mr_stall(mr_stall), .mw_stall(mw_stall), 
-                .de_v(de_v), .clk(clk));
-
+                .de_v(de_v), .instr(de_instr), .clk(clk));
     //ADDRESS GENERATE  
-    wire[0:0] ag_re, ag_we, ag_v, ag_rmsel, ld_mr, mr_vin;
+    wire[0:0] ag_re, ag_we, ag_rmsel, ld_mr, mr_vin;
     wire[1:0] ag_alusel;
     wire[31:0] ag_dval, ag_sval, ag_disp, mr_addrin, ag_flags, ag_flag_ld;
     wire[15:0] ag_sreg, ag_ptr;
     wire[7:0] ag_modrm;
-    wire[2:0] ag_jmp;
 
     dffe agrmsel_dff(.clk(clk), .d(de_rmsel), .q(ag_rmsel), .qb(), .r(r), .s(s), .e(ld_ag)),
          agre_dff(.clk(clk), .d(de_re), .q(ag_re), .r(r), .s(s), .qb(), .e(ld_ag)),
@@ -53,11 +60,10 @@ module TOP;
     assign mr_vin = ag_v & !(mem_dep_stall);
 
     //MEM READ
-    wire[0:0] mr_re, mr_we, mr_v, mr_rmsel, read_finished, write_finished, ex_vin, v_mr_re, ld_ex, v_eipw, v_csw;
+    wire[0:0] mr_re, mr_we, mr_rmsel, read_finished, write_finished, ex_vin, v_mr_re, ld_ex, v_ld_eip_jmp, v_ld_cs;
     wire[31:0] mr_addr, mr_dval, mr_sval, mem_val, ex_dvalin, ex_svalin, mr_flags, mr_flag_ld, mr_eip;
     wire[15:0] mr_ptr;
     wire[7:0] mr_modrm;
-    wire[2:0] mr_jmp;
     wire[1:0] mr_alusel;
  
     dffe mrrmsel_dff(.clk(clk), .d(ag_rmsel), .q(mr_rmsel), .qb(), .r(r), .s(s), .e(ld_mr)),
@@ -74,12 +80,12 @@ module TOP;
     dffe3 mrjmp_dff(.clk(clk), .d(ag_jmp), .q(mr_jmp), .qb(), .r(r), .s(s), .e(ld_mr));
     dffe2 mralusel_dff(.clk(clk), .d(ag_alusel), .q(mr_alusel), .qb(), .r(r), .s(s), .e(ld_mr));
     
-    mr_logic mr(ex_dvalin, ex_svalin, v_mr_re, v_eipw, v_csw, mr_eip, mr_stall, mr_rmsel, mr_re, read_finished, mr_dval, mr_sval, mr_addr, mem_val, mr_jmp, mr_v);
+    mr_logic mr(ex_dvalin, ex_svalin, v_mr_re, v_ld_eip_jmp, v_ld_cs, mr_eip, mr_stall, mr_rmsel, mr_re, read_finished, mr_dval, mr_sval, mr_addr, mem_val, mr_jmp, mr_v);
     assign ld_ex = !mw_stall;
     assign ex_vin = mr_v & !(mr_stall);
 
     //EXECUTE
-    wire[0:0] ex_we, ex_v, ex_rmsel, mw_cfin, mw_afin, mw_ofin, ld_mw;
+    wire[0:0] ex_we, ex_rmsel, mw_cfin, mw_afin, mw_ofin, ld_mw;
     wire[31:0] ex_addr, ex_dval, ex_sval, ex_flags, ex_flag_ld, mw_aluvalin;
     wire[15:0] ex_ptr;
     wire[7:0] ex_modrm;
@@ -102,7 +108,7 @@ module TOP;
     assign mw_vin = ex_v;
   
     //MEM WRITEBACK
-    wire[0:0] mw_we, mw_cf, mw_af, mw_of, mw_v, mw_rmsel, v_rf_ld, v_mem_we;
+    wire[0:0] mw_we, mw_cf, mw_af, mw_of, mw_rmsel, v_rf_ld, v_mem_we;
     wire[31:0] mw_aluval, mw_flags, mw_flag_ld, mw_addr, new_flags, v_flag_ld;
     wire[7:0] mw_modrm;
     wire[2:0] wreg;
@@ -123,12 +129,11 @@ module TOP;
         .flags(new_flags), .mw_stall(mw_stall), .af(mw_af), .cf(mw_cf), .of(mw_of), .aluval(mw_aluval),
         .modrm(mw_modrm), .rmsel(mw_rmsel), .we(mw_we), .flag_ld(mw_flag_ld), .write_finished(write_finished), .v(mw_v));
     
-
-    wire[31:0] eflags, eip;
-    wire[15:0] cs;
+    wire [31:0] new_eip;
+    assign new_eip = f_ld_eip == 1 ? f_new_eip : mr_eip;  
     dffev32 eflags_dff(.clk(clk), .d(new_flags), .q(eflags), .qb(), .r(r), .s(s), .e(v_flag_ld));
-    dffe32 eip_dff(.clk(clk), .d(mr_eip), .q(eip), .qb(), .r(r), .s(s), .e(v_eipw));
-    dffe16 cs_dff(.clk(clk), .d(mr_ptr), .q(cs), .qb(), .r(r), .s(s), .e(v_csw));
+    dffe32 eip_dff(.clk(clk), .d(new_eip), .q(eip), .qb(), .r(r), .s(s), .e(v_ld_eip_jmp | f_ld_eip));
+    dffe16 cs_dff(.clk(clk), .d(mr_ptr), .q(cs), .qb(), .r(r), .s(s), .e(v_ld_cs));
     regfile rf(.in(mw_aluval), .w(wreg), .we(v_rf_ld), .r1(3'b000), .r2(3'b000), .out1(), .out2(), .clk(clk));
 
 
@@ -158,26 +163,9 @@ module TOP;
             s = 1'b1;
             #0.1
             r = 1'b1;
-            de_v = 1'b0;
-            /*ptr = 32'h00000000;
-            dval = 32'h00000002;
-            sval = 32'h0000ABCD;
-            disp = 32'h00000003;
-            flags = 32'h00000000;
-            flag_ld = 32'h00000000;
-            sreg = 16'hFFF0;
-            rmsel = 1'b1;
-            alusel = 2'b00;
-            we = 1'b0;
-            re = 1'b0;
-            //ld_ag = 1'b1;
-            modrm = 8'b00000000;
-            jmp = 3'b100;
-            v = 1'b1;
+            //de_v = 1'b0;
             @(posedge clk);
-            //ld_ag = 1'b0;*/
-            @(posedge clk);
-            de_v = 1'b1;
+            //de_v = 1'b1;
         end
 
     initial #1000 $finish;

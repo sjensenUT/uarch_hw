@@ -26,6 +26,4 @@ module reg_dep_logic (reg_dep, ro_needed, rm_needed, modrm, v, v_ag_we, v_mr_we,
     
     assign reg_dep = ro_dep | rm_dep;
 
-
 endmodule
-

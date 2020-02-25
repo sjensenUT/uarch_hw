@@ -1,7 +1,8 @@
 module dummy_decode (de_re, de_we, ag_vin, de_rmsel, de_alusel, de_dval, de_sval, de_disp, 
     de_flags, de_flag_ld, de_sreg, de_ptr, de_modrm, de_jmp, ro_needed, rm_needed, ld_ag, 
-    mem_dep, reg_dep, mr_stall, mw_stall, de_v, clk);
+    mem_dep, reg_dep, mr_stall, mw_stall, de_v, instr, clk);
     input wire[0:0] reg_dep, mem_dep, mr_stall, mw_stall, de_v, clk;
+    input wire[127:0] instr;
     output wire[0:0] ld_ag, ag_vin;
     output reg[0:0] de_re, de_we, de_rmsel, ro_needed, rm_needed;
     output reg[1:0] de_alusel;
@@ -9,16 +10,12 @@ module dummy_decode (de_re, de_we, ag_vin, de_rmsel, de_alusel, de_dval, de_sval
     output reg[7:0] de_modrm;
     output reg[15:0] de_sreg, de_ptr;
     output reg[31:0] de_dval, de_sval, de_disp, de_flags, de_flag_ld;
-    
-     
-    reg[127:0] count;
 
     assign ld_ag = !(mem_dep | mr_stall | mw_stall);
     assign ag_vin = de_v & !reg_dep;
 
     initial 
     begin
-        count = 128'b0;
         de_re = 1'b0;
         de_we = 1'b0;
         de_rmsel = 1'b0;
@@ -38,7 +35,7 @@ module dummy_decode (de_re, de_we, ag_vin, de_rmsel, de_alusel, de_dval, de_sval
 
     always @(posedge clk)
     begin
-        if(count == 0)
+        if(instr == 1)
         begin //ADD ECX EAX
             de_re = 1'b0;
             de_we = 1'b1;
@@ -56,7 +53,7 @@ module dummy_decode (de_re, de_we, ag_vin, de_rmsel, de_alusel, de_dval, de_sval
             ro_needed = 1'b1;
             rm_needed = 1'b1;
         end
-        else if(count == 1)
+        else if(instr == 2)
         begin   //ADD ECX EAX
             de_re = 1'b0;
             de_we = 1'b1;
@@ -92,12 +89,6 @@ module dummy_decode (de_re, de_we, ag_vin, de_rmsel, de_alusel, de_dval, de_sval
             ro_needed = 1'b0;
             rm_needed = 1'b0; 
         end
-        #0.1 
-        if(ld_ag & ag_vin)
-        begin
-            count = count + 128'b1;
-        end
-
     end
 
 
