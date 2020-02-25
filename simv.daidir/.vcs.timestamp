@@ -84,8 +84,8 @@ BASH_FUNC_module()=() {  eval `$TCLSH /home/projects/Modules/modulecmd.tcl bash 
 1581976982 /home/projects/courses/spring_20/ee382n-19/20s.382N/lib/lib1
 1582597009 processor.v
 1582411001 mem_dep_logic.v
-1582503621 reg_dep_logic.v
-1582579997 DE.v
+1582600081 reg_dep_logic.v
+1582601771 DE.v
 1582582304 MW.v
 1582262144 dff.v
 1582417974 MR.v
@@ -115,4 +115,4 @@ BASH_FUNC_module()=() {  eval `$TCLSH /home/projects/Modules/modulecmd.tcl bash 
 1448427877 /usr/local/packages/synopsys_2015/vcs-mx/linux64/lib/libvirsim.so
 1448427558 /usr/local/packages/synopsys_2015/vcs-mx/linux64/lib/liberrorinf.so
 1448427538 /usr/local/packages/synopsys_2015/vcs-mx/linux64/lib/libsnpsmalloc.so
-1582597205 simv.daidir
+1582601777 simv.daidir

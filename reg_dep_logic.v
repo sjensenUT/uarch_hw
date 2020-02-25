@@ -19,7 +19,7 @@ module reg_dep_logic (reg_dep, ro_needed, rm_needed, modrm, v, v_ag_we, v_mr_we,
     assign ro = modrm[5:3];
     assign rm = modrm[2:0];
 
-    assign rm_isreg = !modrm[6] & !modrm[7] & rm[2] & !rm[1] & !rm[0];
+    assign rm_isreg = !(!modrm[6] & !modrm[7] & rm[2] & !rm[1] & !rm[0]);
     
     assign ro_dep = v & (((ro == ag_reg) & v_ag_ldreg) || ((ro == mr_reg) & v_mr_ldreg) || ((ro == ex_reg) & v_ex_ldreg) || ((ro == mw_reg) & v_mw_ldreg));   
     assign rm_dep = v & rm_isreg & (((rm == ag_reg) & v_ag_ldreg) || ((rm == mr_reg) & v_mr_ldreg) || ((rm == ex_reg) & v_ex_ldreg) || ((rm == mw_reg) & v_mw_ldreg));
