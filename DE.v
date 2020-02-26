@@ -35,7 +35,7 @@ module dummy_decode (de_re, de_we, ag_vin, de_rmsel, de_alusel, de_dval, de_sval
 
     always @(posedge clk)
     begin
-        if(instr == 1)
+        if(instr == 0)
         begin //ADD ECX EAX
             de_re = 1'b0;
             de_we = 1'b1;
@@ -53,7 +53,7 @@ module dummy_decode (de_re, de_we, ag_vin, de_rmsel, de_alusel, de_dval, de_sval
             ro_needed = 1'b1;
             rm_needed = 1'b1;
         end
-        else if(instr == 2)
+        else if(instr == 1)
         begin   //ADD ECX EAX
             de_re = 1'b0;
             de_we = 1'b1;
